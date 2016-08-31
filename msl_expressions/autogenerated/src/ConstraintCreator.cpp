@@ -69,6 +69,8 @@
 
 #include  "Plans/Attack/constraints/ProtectBall1449151802193Constraints.h"
 
+#include  "Plans/TestPlans/TestKick/constraints/TestKickMaster1472647610805Constraints.h"
+
 #include  "Plans/Standards/Own/Corner/constraints/CornerExecBounceShot1459362028865Constraints.h"
 
 #include  "Plans/Robotcheck/constraints/Robotcheck1456756058055Constraints.h"
@@ -122,6 +124,8 @@
 #include  "Plans/GameStrategy/Gameplay/constraints/GamePlay1457173546734Constraints.h"
 
 #include  "Plans/Standards/Own/FreeKick/constraints/OwnFreeKickInOppHalf1464531946023Constraints.h"
+
+#include  "Plans/TestPlans/TestKick/constraints/TestKickRunning1472647818767Constraints.h"
 
 #include  "Plans/Attack/TestPlans/constraints/TestPassPointMaster1441106724156Constraints.h"
 

@@ -69,6 +69,8 @@
 
 #include  "Plans/Attack/ProtectBall1449151802193.h"
 
+#include  "Plans/TestPlans/TestKick/TestKickMaster1472647610805.h"
+
 #include  "Plans/Standards/Own/Corner/CornerExecBounceShot1459362028865.h"
 
 #include  "Plans/Robotcheck/Robotcheck1456756058055.h"
@@ -122,6 +124,8 @@
 #include  "Plans/GameStrategy/Gameplay/GamePlay1457173546734.h"
 
 #include  "Plans/Standards/Own/FreeKick/OwnFreeKickInOppHalf1464531946023.h"
+
+#include  "Plans/TestPlans/TestKick/TestKickRunning1472647818767.h"
 
 #include  "Plans/Attack/TestPlans/TestPassPointMaster1441106724156.h"
 
@@ -283,6 +287,10 @@ namespace alica
                 return make_shared<UtilityFunction1449151802193>();
                 break;
 
+            case 1472647610805:
+                return make_shared<UtilityFunction1472647610805>();
+                break;
+
             case 1459362028865:
                 return make_shared<UtilityFunction1459362028865>();
                 break;
@@ -389,6 +397,10 @@ namespace alica
 
             case 1464531946023:
                 return make_shared<UtilityFunction1464531946023>();
+                break;
+
+            case 1472647818767:
+                return make_shared<UtilityFunction1472647818767>();
                 break;
 
             case 1441106724156:

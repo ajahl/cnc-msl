@@ -45,6 +45,8 @@ using namespace std;
 
 #include  "Plans/TestPlans/KickCurveTuning/LaserBallTracking.h"
 
+#include  "Plans/TestPlans/TestKick/TestIdle.h"
+
 #include  "Plans/Standards/Own/ThrowIn/PositionReceiverThrownIn.h"
 
 #include  "Plans/DribbleCalibration/Behaviours/CalibrationTakeBall.h"
@@ -113,6 +115,8 @@ using namespace std;
 
 #include  "Plans/GameStrategy/Other/DropBallAttackerPos.h"
 
+#include  "Plans/TestPlans/TestKick/TestGetBall.h"
+
 #include  "Plans/Attack/DribbleEmergencyKick.h"
 
 #include  "Plans/GenericStandards/StandardAlignToPoint2Receivers.h"
@@ -120,6 +124,8 @@ using namespace std;
 #include  "Plans/Behaviours/Joystick.h"
 
 #include  "Plans/Attack/CatchPass.h"
+
+#include  "Plans/TestPlans/TestKick/TestKick.h"
 
 #include  "Plans/Standards/Own/Corner/BounceShotAlignPasser.h"
 
@@ -164,6 +170,8 @@ using namespace std;
 #include  "Plans/Goalie/Test/GoalieBehaviours/DriveToBall.h"
 
 #include  "Plans/Goalie/Test/GoalieBehaviours/BlockBall.h"
+
+#include  "Plans/TestPlans/TestKick/TestDriveTo.h"
 
 #include  "Plans/DribbleCalibration/Behaviours/CalibrationBallHolding.h"
 
@@ -346,6 +354,11 @@ namespace alica
                 return make_shared<LaserBallTracking>();
                 break;
 
+            case 1472648954665:
+
+                return make_shared<TestIdle>();
+                break;
+
             case 1461584235418:
 
                 return make_shared<PositionReceiverThrownIn>();
@@ -526,6 +539,11 @@ namespace alica
                 return make_shared<DropBallAttackerPos>();
                 break;
 
+            case 1472647982006:
+
+                return make_shared<TestGetBall>();
+                break;
+
             case 1457706826895:
 
             case 1457706895442:
@@ -548,6 +566,11 @@ namespace alica
             case 1440754543898:
 
                 return make_shared<CatchPass>();
+                break;
+
+            case 1472648373489:
+
+                return make_shared<TestKick>();
                 break;
 
             case 1459354990329:
@@ -670,6 +693,15 @@ namespace alica
             case 1447863463711:
 
                 return make_shared<BlockBall>();
+                break;
+
+            case 1472648312469:
+
+            case 1472648841944:
+
+            case 1472648852426:
+
+                return make_shared<TestDriveTo>();
                 break;
 
             case 1469284324012:

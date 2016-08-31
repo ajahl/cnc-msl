@@ -68,6 +68,8 @@
 
 #include  "Plans/Attack/ProtectBall1449151802193.h"
 
+#include  "Plans/TestPlans/TestKick/TestKickMaster1472647610805.h"
+
 #include  "Plans/Standards/Own/Corner/CornerExecBounceShot1459362028865.h"
 
 #include  "Plans/Robotcheck/Robotcheck1456756058055.h"
@@ -121,6 +123,8 @@
 #include  "Plans/GameStrategy/Gameplay/GamePlay1457173546734.h"
 
 #include  "Plans/Standards/Own/FreeKick/OwnFreeKickInOppHalf1464531946023.h"
+
+#include  "Plans/TestPlans/TestKick/TestKickRunning1472647818767.h"
 
 #include  "Plans/Attack/TestPlans/TestPassPointMaster1441106724156.h"
 
@@ -1014,6 +1018,18 @@ namespace alica
 
                 break;
 
+            case 1472648640273:
+
+                return make_shared<TransitionCondition1472648640273>();
+
+                break;
+
+            case 1472648641417:
+
+                return make_shared<TransitionCondition1472648641417>();
+
+                break;
+
             case 1459365392367:
 
                 return make_shared<TransitionCondition1459365392367>();
@@ -1899,6 +1915,30 @@ namespace alica
             case 1464785280406:
 
                 return make_shared<TransitionCondition1464785280406>();
+
+                break;
+
+            case 1472648741726:
+
+                return make_shared<TransitionCondition1472648741726>();
+
+                break;
+
+            case 1472648742636:
+
+                return make_shared<TransitionCondition1472648742636>();
+
+                break;
+
+            case 1472648743524:
+
+                return make_shared<TransitionCondition1472648743524>();
+
+                break;
+
+            case 1472648744508:
+
+                return make_shared<TransitionCondition1472648744508>();
 
                 break;
 

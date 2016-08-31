@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="ASCII"?>
+<uiextensionmodel:PmlUiExtensionMap xmlns:uiextensionmodel="http:///de.uni_kassel.vs.cn/planDesigner/pmlextension/uiextensionmodel">
+  <extensions>
+    <key href="TestKickRunning.pml#1472647848895"/>
+    <value xPos="286" yPos="54" width="82" height="67" collapsed="false"/>
+  </extensions>
+  <extensions>
+    <key href="TestKickRunning.pml#1472647818767"/>
+    <value width="821" height="480"/>
+  </extensions>
+  <extensions>
+    <key href="TestKickRunning.pml#1472647848896"/>
+    <value/>
+  </extensions>
+  <extensions>
+    <key href="TestKickRunning.pml#1472648701821"/>
+    <value xPos="454" yPos="71" width="78" height="67" collapsed="false"/>
+  </extensions>
+  <extensions>
+    <key href="TestKickRunning.pml#1472648712038"/>
+    <value xPos="124" yPos="56" width="65" height="67" collapsed="false"/>
+  </extensions>
+  <extensions>
+    <key href="TestKickRunning.pml#1472648717255"/>
+    <value xPos="601" yPos="51" width="65" height="67" collapsed="false"/>
+  </extensions>
+  <extensions>
+    <key href="TestKickRunning.pml#1472648733912"/>
+    <value xPos="402" yPos="296" collapsed="false"/>
+  </extensions>
+  <extensions>
+    <key href="TestKickRunning.pml#1472648740577"/>
+    <value/>
+  </extensions>
+  <extensions>
+    <key href="TestKickRunning.pml#1472648741815"/>
+    <value/>
+  </extensions>
+  <extensions>
+    <key href="TestKickRunning.pml#1472648742732"/>
+    <value/>
+  </extensions>
+  <extensions>
+    <key href="TestKickRunning.pml#1472648743629"/>
+    <value/>
+  </extensions>
+  <extensions>
+    <key href="TestDriveTo.beh#1472648841944"/>
+    <value/>
+  </extensions>
+  <extensions>
+    <key href="TestDriveTo.beh#1472648852426"/>
+    <value/>
+  </extensions>
+  <extensions>
+    <key href="TestKick.beh#1472648373489"/>
+    <value/>
+  </extensions>
+  <extensions>
+    <key href="TestIdle.beh#1472648954665"/>
+    <value/>
+  </extensions>
+  <extensions>
+    <key href="TestGetBall.beh#1472647982006"/>
+    <value/>
+  </extensions>
+  <extensions>
+    <key href="../../Dribble/DribbleControl.beh#1449742099555"/>
+    <value/>
+  </extensions>
+</uiextensionmodel:PmlUiExtensionMap>

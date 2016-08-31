@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ASCII"?>
+<uiextensionmodel:PmlUiExtensionMap xmlns:uiextensionmodel="http:///de.uni_kassel.vs.cn/planDesigner/pmlextension/uiextensionmodel">
+  <extensions>
+    <key href="TestKickMaster.pml#1472647610806"/>
+    <value xPos="85" yPos="125" width="65" height="67"/>
+  </extensions>
+  <extensions>
+    <key href="TestKickMaster.pml#1472647610805"/>
+    <value width="899" height="402"/>
+  </extensions>
+  <extensions>
+    <key href="TestKickMaster.pml#1472647610808"/>
+    <value/>
+  </extensions>
+  <extensions>
+    <key href="TestKickMaster.pml#1472648628993"/>
+    <value xPos="407" yPos="184" collapsed="false"/>
+  </extensions>
+  <extensions>
+    <key href="TestKickMaster.pml#1472648638637"/>
+    <value>
+      <bendpoints xPos="407" yPos="280"/>
+    </value>
+  </extensions>
+  <extensions>
+    <key href="TestKickMaster.pml#1472648640369"/>
+    <value>
+      <bendpoints xPos="416" yPos="192"/>
+    </value>
+  </extensions>
+  <extensions>
+    <key href="TestKickRunning.pml#1472647818767"/>
+    <value/>
+  </extensions>
+</uiextensionmodel:PmlUiExtensionMap>
