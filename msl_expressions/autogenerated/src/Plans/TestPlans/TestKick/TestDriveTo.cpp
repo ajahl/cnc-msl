@@ -8,7 +8,6 @@ using namespace std;
 #include <pathplanner/PathPlanner.h>
 #include <MSLWorldModel.h>
 #include <container/CNPoint2D.h>
-#include <msl_robot/robotmovement/MovementQuery.h>
 /*PROTECTED REGION END*/
 namespace alica
 {
@@ -20,6 +19,7 @@ namespace alica
         /*PROTECTED REGION ID(con1472648297552) ENABLED START*/ //Add additional options here
         toX = 0;
         toY = 0;
+        query = make_shared<msl::MovementQuery>();
         /*PROTECTED REGION END*/
     }
     TestDriveTo::~TestDriveTo()
@@ -37,9 +37,9 @@ namespace alica
         auto alloGoal = make_shared < geometry::CNPoint2D > (toX, toY);
         auto egoGoal = alloGoal->alloToEgo(*ownPos);
 
-        auto query = make_shared<msl::MovementQuery>();
         query->dribble = true;
         query->egoDestinationPoint = egoGoal;
+        query->egoAlignPoint = egoGoal;
 
         msl::RobotMovement rm;
         auto motionCommand = rm.moveToPoint(query);

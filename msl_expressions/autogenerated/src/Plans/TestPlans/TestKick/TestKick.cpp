@@ -2,6 +2,14 @@ using namespace std;
 #include "Plans/TestPlans/TestKick/TestKick.h"
 
 /*PROTECTED REGION ID(inccpp1472648360493) ENABLED START*/ //Add additional includes here
+#include <Game.h>
+#include "msl_robot/robotmovement/RobotMovement.h"
+#include "msl_actuator_msgs/KickControl.h"
+#include <RawSensorData.h>
+#include <pathplanner/PathPlanner.h>
+#include <MSLWorldModel.h>
+#include <container/CNPoint2D.h>
+
 /*PROTECTED REGION END*/
 namespace alica
 {
@@ -11,6 +19,7 @@ namespace alica
             DomainBehaviour("TestKick")
     {
         /*PROTECTED REGION ID(con1472648360493) ENABLED START*/ //Add additional options here
+    	query = make_shared<msl::MovementQuery>();
         /*PROTECTED REGION END*/
     }
     TestKick::~TestKick()
@@ -21,7 +30,31 @@ namespace alica
     void TestKick::run(void* msg)
     {
         /*PROTECTED REGION ID(run1472648360493) ENABLED START*/ //Add additional options here
-        this->setSuccess(true);
+    	auto ownPos = wm->rawSensorData->getOwnPositionVision();
+
+		if (ownPos == nullptr)
+			return;
+
+		auto alloGoal = wm->field->posOppGoalMid();
+		auto egoGoal = alloGoal->alloToEgo(*ownPos);
+
+		query->egoAlignPoint = egoGoal;
+		query->dribble = true;
+
+		msl::RobotMovement rm;
+		auto motionCommand = rm.moveToPoint(query);
+
+
+		cout << "Angle to: " << egoGoal->angleTo() << endl;
+		if (fabs(egoGoal->angleTo()) < 0.02)
+		{
+			msl_actuator_msgs::KickControl kickCmd;
+			kickCmd.enabled = true;
+			kickCmd.power = 2000;
+
+			this->send(kickCmd);
+			this->setSuccess(true);
+		}
         /*PROTECTED REGION END*/
     }
     void TestKick::initialiseParameters()
