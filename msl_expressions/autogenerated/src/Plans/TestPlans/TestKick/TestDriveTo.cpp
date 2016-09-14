@@ -45,7 +45,7 @@ namespace alica
         auto motionCommand = rm.moveToPoint(query);
         this->send(motionCommand);
 
-        if (egoGoal->length() < 200)
+        if (egoGoal->length() < 300)
         {
             this->setSuccess(true);
         }

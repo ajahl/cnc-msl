@@ -22,7 +22,7 @@ namespace alica
             DomainBehaviour("TestGetBall")
     {
         /*PROTECTED REGION ID(con1472647957600) ENABLED START*/ //Add additional options here
-    	query = make_shared<msl::MovementQuery>();
+        query = make_shared<msl::MovementQuery>();
         /*PROTECTED REGION END*/
     }
     TestGetBall::~TestGetBall()

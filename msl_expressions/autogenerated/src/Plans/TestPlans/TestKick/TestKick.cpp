@@ -19,7 +19,7 @@ namespace alica
             DomainBehaviour("TestKick")
     {
         /*PROTECTED REGION ID(con1472648360493) ENABLED START*/ //Add additional options here
-    	query = make_shared<msl::MovementQuery>();
+        query = make_shared<msl::MovementQuery>();
         /*PROTECTED REGION END*/
     }
     TestKick::~TestKick()
@@ -30,31 +30,33 @@ namespace alica
     void TestKick::run(void* msg)
     {
         /*PROTECTED REGION ID(run1472648360493) ENABLED START*/ //Add additional options here
-    	auto ownPos = wm->rawSensorData->getOwnPositionVision();
+        auto ownPos = wm->rawSensorData->getOwnPositionVision();
 
-		if (ownPos == nullptr)
-			return;
+        if (ownPos == nullptr)
+            return;
 
-		auto alloGoal = wm->field->posOppGoalMid();
-		auto egoGoal = alloGoal->alloToEgo(*ownPos);
+        auto alloGoal = wm->field->posOppGoalMid();
+        auto egoGoal = alloGoal->alloToEgo(*ownPos);
 
-		query->egoAlignPoint = egoGoal;
-		query->dribble = true;
+        query->egoAlignPoint = egoGoal;
+        query->egoDestinationPoint = make_shared < geometry::CNPoint2D > (0, 0);
+        cout << egoGoal->toString() << endl;
 
-		msl::RobotMovement rm;
-		auto motionCommand = rm.moveToPoint(query);
+        msl::RobotMovement rm;
 
+        auto motionCommand = rm.moveToPoint(query);
+        this->send(motionCommand);
 
-		cout << "Angle to: " << egoGoal->angleTo() << endl;
-		if (fabs(egoGoal->angleTo()) < 0.02)
-		{
+        cout << egoGoal->angleTo() << endl;
+
+        if (geometry::absDeltaAngle(egoGoal->angleTo(), M_PI) < 0.1)
+        {
 			msl_actuator_msgs::KickControl kickCmd;
 			kickCmd.enabled = true;
 			kickCmd.power = 2000;
-
+			cout << "kick!" << endl;
 			this->send(kickCmd);
-			this->setSuccess(true);
-		}
+        }
         /*PROTECTED REGION END*/
     }
     void TestKick::initialiseParameters()
