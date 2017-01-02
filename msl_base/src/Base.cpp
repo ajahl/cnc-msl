@@ -9,15 +9,13 @@
 
 #include <thread>
 #include <chrono>
-#include "ros/ros.h"
 #include "Base.h"
-#include "clock/AlicaROSClock.h"
-#include "communication/AlicaRosCommunication.h"
 #include "SigFault.h"
-#include "msl_robot/robotmovement/RobotMovement.h"
 #include "SolverType.h"
 #include "CGSolver.h"
-
+#include "engine/IAlicaClock.h"
+#include "clock/AlicaSystemClock.h"
+#include "communication/AlicaDummyCommunication.h"
 
 using namespace std;
 using namespace msl;
@@ -32,24 +30,9 @@ namespace msl
 		cc = new alica::ConditionCreator();
 		uc = new alica::UtilityFunctionCreator();
 		crc = new alica::ConstraintCreator();
-		ae->setIAlicaClock(new alicaRosProxy::AlicaROSClock());
-		ae->setCommunicator(new alicaRosProxy::AlicaRosCommunication(ae));
-		if(sim) {
-			cout << "Base Vorher: " << ae->getIAlicaClock()->now() << endl;
-			ae->getIAlicaClock()->sleep(200000);
-			cout << "Base Nachher: " << ae->getIAlicaClock()->now() << endl;
-		}
-
-
+		ae->setIAlicaClock(new alica_dummy_proxy::AlicaSystemClock());
+		ae->setCommunicator(new alica_dummy_proxy::AlicaDummyCommunication(ae));
 		ae->addSolver(SolverType::GRADIENTSOLVER,new alica::reasoner::CGSolver(ae));
-
-		wm = MSLWorldModel::get();
-		if (sim)
-		{
-			wm->timeLastSimMsgReceived = 1;
-		}
-		wm->setEngine(ae);
-
 		ae->init(bc, cc, uc, crc, roleSetName, masterPlanName, roleSetDir, false);
 	}
 
@@ -92,8 +75,6 @@ int main(int argc, char** argv)
 		printUsage();
 		return 0;
 	}
-	cout << "Initialising ROS" << endl;
-	ros::init(argc, argv, getNodeName("Base"));
 	//This makes segfaults to exceptions
 	segfaultdebug::init_segfault_exceptions();
 	cout << "Parsing command line parameters:" << endl;
@@ -139,7 +120,8 @@ int main(int argc, char** argv)
 	cout << "\nStarting Base ..." << endl;
 	base->start();
 
-	while (ros::ok())
+	// STRG c abfangen
+	while (true)
 	{
 		std::chrono::milliseconds dura(500);
 		std::this_thread::sleep_for(dura);

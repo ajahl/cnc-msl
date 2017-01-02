@@ -1,2 +1,0 @@
-int32 senderID
-uint32 validFor

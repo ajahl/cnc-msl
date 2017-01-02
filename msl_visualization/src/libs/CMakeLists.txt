@@ -1,2 +1,0 @@
-ADD_SUBDIRECTORY( pman )
-ADD_SUBDIRECTORY( rtdb )

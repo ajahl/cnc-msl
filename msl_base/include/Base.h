@@ -2,7 +2,7 @@
  * Base.h
  *
  *  Created on: 22.10.2014
- *      Author: Andreas Witsch
+ *      Author: Alex Jahl
  */
 
 #ifndef BASE_H_
@@ -15,7 +15,6 @@
 #include "ConditionCreator.h"
 #include "UtilityFunctionCreator.h"
 #include "ConstraintCreator.h"
-#include "MSLWorldModel.h"
 
 using namespace std;
 
@@ -35,7 +34,6 @@ namespace msl
 		alica::ConditionCreator* cc;
 		alica::UtilityFunctionCreator* uc;
 		alica::ConstraintCreator* crc;
-		MSLWorldModel* wm;
 	};
 
 } /* namespace msl */
