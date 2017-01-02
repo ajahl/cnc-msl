@@ -1,1 +1,0 @@
-src/arm/dra72-evm-lcd10.dtb: src/arm/.dra72-evm-lcd10.dtb.dts.tmp src/arm/dra7xx-clocks.dtsi

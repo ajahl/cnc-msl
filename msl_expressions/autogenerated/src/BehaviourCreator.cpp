@@ -21,7 +21,8 @@ namespace alica
         switch (behaviourConfId)
         {
 
-            case 1482486281206:
+           // case 1482486281206:
+            case 1482486206:
 
                 return make_shared<DummyBehaviour>();
                 break;

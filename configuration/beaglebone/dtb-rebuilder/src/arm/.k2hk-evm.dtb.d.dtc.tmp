@@ -1,1 +1,0 @@
-src/arm/k2hk-evm.dtb: src/arm/.k2hk-evm.dtb.dts.tmp src/arm/keystone-clocks.dtsi

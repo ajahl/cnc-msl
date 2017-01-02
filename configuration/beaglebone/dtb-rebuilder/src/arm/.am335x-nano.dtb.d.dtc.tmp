@@ -1,1 +1,0 @@
-src/arm/am335x-nano.dtb: src/arm/.am335x-nano.dtb.dts.tmp src/arm/am33xx-clocks.dtsi

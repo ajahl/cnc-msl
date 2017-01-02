@@ -1,1 +1,0 @@
-src/arm/am43x-epos-evm-hdmi.dtb: src/arm/.am43x-epos-evm-hdmi.dtb.dts.tmp src/arm/am43xx-clocks.dtsi
